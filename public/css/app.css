@@ -284,3 +284,220 @@ form {
     width: 100%;
     max-height: 420px;
 }
+
+/* form_wrapper */
+
+.form_wrapper {
+    padding: var(--height-header) 20px 260px 20px;
+    max-width: 920px;
+    margin: 82px auto 0 auto;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+
+}
+
+.form_img {}
+
+
+.form_title {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    color: #37A9CD;
+}
+
+.form_title.signUp {
+
+    color: #F26F21;
+}
+
+.form_acc {}
+
+
+
+.form_group-right {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.form_group-right label {
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: #4A5568;
+}
+
+.form_group-right input {
+    border: 1px solid #37A9CD;
+    font-size: 1.6rem;
+    padding: 10px 20px;
+    border-radius: 6px;
+}
+
+.form_group-right.signUp input {
+    border: 1px solid #F26F21;
+
+}
+
+.btn_register,
+.btn_login {
+    border-radius: 6px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #fff;
+    background-color: #37A9CD;
+    display: block;
+    width: 100%;
+    padding: 14px 20px;
+    transition: all linear .2s;
+
+}
+
+.btn_register {
+    background-color: #F26F21;
+    transition: all linear .2s;
+
+}
+
+.btn_register:hover {
+    background-color: #37A9CD;
+    transition: all linear .2s;
+
+}
+
+.btn_login:hover {
+    transition: all linear .2s;
+    background-color: #F26F21;
+}
+
+
+
+.btn_login-gg {
+    border-radius: 6px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #fff;
+    background-color: #2D3748;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 12px 20px;
+    transition: all linear .2s;
+    margin-top: 12px;
+}
+
+.btn_login-gg:hover {
+    transition: all linear .2s;
+    opacity: .8;
+    color: #fff;
+
+}
+
+.btn_login-gg i {
+    font-size: 28px;
+    color: #ea4335;
+    margin-right: 12px;
+
+}
+
+.form_options {}
+
+.forgot_pass {
+    color: #37A9CD;
+    text-align: center;
+    font-size: 1.4rem;
+    display: block;
+    transition: all linear .3s;
+    font-weight: 400;
+    margin: 30px 0 16px 0;
+}
+
+
+
+.options_register {
+    text-align: center;
+    color: #616161;
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+.options_register a {
+    color: #37A9CD;
+    transition: all linear .3s;
+    margin-left: 8px;
+}
+
+.forgot_pass:hover,
+.options_register a:hover {
+    text-decoration: underline;
+    transition: all linear .3s;
+}
+
+/* category_wrapper */
+.category_wrapper {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    max-width: 1230px;
+    padding: 0 15px;
+    gap: 32px;
+}
+
+.category_sideBar {
+    grid-column: span 3;
+}
+
+.category_item-title {
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin-bottom: 32px;
+}
+
+.category_item-option {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    padding: 4px 20px;
+}
+
+.category_item-option:hover {
+    color: #ea4335;
+    transform: translateX(2px);
+    transition: all linear .3s;
+}
+
+
+.category_content {
+    grid-column: span 9;
+
+}
+
+.category_search-wrapper {
+    border: 1px solid #CBD5E0;
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 12px;
+    margin-bottom: 32px;
+}
+
+.category_search-wrapper i {
+    font-size: 2.2rem;
+    margin-right: 12px;
+    color: #37A9CD;
+}
+
+.category_search-wrapper input {
+    width: 400px;
+    height: 36px;
+    outline: none;
+    font-size: 1.6rem;
+}
+
+.category_lists {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}

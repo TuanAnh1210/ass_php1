@@ -99,8 +99,8 @@
     </div>
 </footer>
 </main>
+<script src="http://localhost/php1_ass_ph29220/public/js/index.js"></script>
 
-<script src="http://localhost/php1_ass_ph29220/public/js/main.js"></script>
 </body>
 
 </html>

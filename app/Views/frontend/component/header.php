@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
     <link rel="stylesheet" href="<?= css_file() ?>" />
     <link rel="stylesheet" href="<?= css_responsive() ?>" />
+
 </head>
 
 <body>
@@ -32,9 +33,10 @@
                         </span>
                     </li>
                     <li class="nav_item">
-                        <a class="nav_link active" href="#">Trang Chủ</a>
+                        <a class="nav_link" href="http://localhost/php1_ass_ph29220/">Trang Chủ</a>
                     </li>
-                    <li class="nav_item"><a class="nav_link" href="">Sản Phẩm</a></li>
+                    <li class="nav_item"><a class="nav_link" href="http://localhost/php1_ass_ph29220/home/category">Sản
+                            Phẩm</a></li>
                     <li class="nav_item">
                         <a class="nav_link" href="#">Về Chúng Tôi</a>
                     </li>
@@ -42,8 +44,10 @@
                 </ul>
 
                 <div class="header_actions">
-                    <input class="btn-logIn" type="button" value="Đăng Nhập" />
-                    <input class="btn-register" type="button" value="Đăng Ký" />
+                    <a href="http://localhost/php1_ass_ph29220/account?signIn"><input class="btn-logIn" type="button"
+                            value="Đăng Nhập" /></a>
+                    <a href="http://localhost/php1_ass_ph29220/account?signUp"> <input class="btn-register"
+                            type="button" value="Đăng Ký" /></a>
                 </div>
 
                 <div class="header__menu-icon">

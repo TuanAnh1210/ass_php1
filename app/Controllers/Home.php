@@ -32,6 +32,20 @@ class Home extends BaseController
 
     public function category()
     {
-        return $this->view('frontend.pages.category');
+        $sql = "select * from categories";
+        $listsCategory = $this->homeModel->query_all($sql);
+
+        if (!empty($_GET['dm']) && $_GET['dm'] > 0) {
+            $query = "select * from products where categoryId = {$_GET['dm']}";
+            $listsPrd = $this->homeModel->query_all($query);
+        } else {
+            $query = "select * from products where categoryId = 1";
+            $listsPrd = $this->homeModel->query_all($query);
+        }
+
+        return $this->view('frontend.pages.category', [
+            'listsCategory' => $listsCategory,
+            'listsPrd' => $listsPrd
+        ]);
     }
 }
