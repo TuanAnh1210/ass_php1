@@ -11,10 +11,7 @@
     <ul class="category_sideBar">
         <li class="category_item-title">Danh mục</li>
         <?php foreach ($listsCategory as $key => $value) : ?>
-        <a href="http://localhost/php1_ass_ph29220/home/category?dm=<?php echo $value['id'] ?>">
-            <li class="category_item-option"><?php echo $value['categoryName'] ?></li>
-        </a>
-
+        <li class="category_item-option"><?php echo $value['categoryName'] ?></li>
         <?php endforeach ?>
 
     </ul>
@@ -25,19 +22,92 @@
             <input type="text" placeholder="Search...">
         </div>
         <div class="category_lists">
-            <?php foreach ($listsPrd as $key => $value) : ?>
-            <div class="category_card">
-                <img class="product_image" src="<?php echo $value['productImage'] ?>" alt="">
-                <h3 class="product_name"><?php echo $value['productName'] ?></h3>
-                <p class="product_desc"><?php echo $value['productDesc'] ?></p>
-                <p class="product_price"><?php echo $value['productPrice'] ?></p>
-            </div>
-            <?php endforeach ?>
+
 
         </div>
     </div>
 </div>
 
+<script>
+const dataCategory = <?= json_encode($listsPrd) ?>
 
+dataCategory.forEach(element => {
+    for (let i in element) {
+        if (!isNaN(Number(i))) {
+            delete element[i];
+        }
+    }
+});
+
+function renderCate(category, nodeEle) {
+    if (category == 'Danh mục 1') {
+        const listRender = dataCategory.filter(item => item.categoryId == 1)
+        document.querySelector('.category_item-option.active') ? document.querySelector('.category_item-option.active')
+            .classList.remove('active') : console.log(1)
+        nodeEle.classList.add('active')
+        document.querySelector('.category_lists').innerHTML = listRender.map(item => `
+            <div class="category_card">
+                <img class="product_image" src="${item.productImage}" alt="">
+                <h3 class="product_name">${item.productName}</h3>
+                <p class="product_desc">${item.productDesc}</p>
+                <p class="product_price">$${item.productPrice}</p>
+            </div>
+        `).join("")
+    } else if (category == 'Danh mục 2') {
+        const listRender = dataCategory.filter(item => item.categoryId == 2)
+        document.querySelector('.category_item-option.active') ? document.querySelector('.category_item-option.active')
+            .classList.remove('active') : console.log(1)
+        nodeEle.classList.add('active')
+        document.querySelector('.category_lists').innerHTML = listRender.map(item => `
+            <div class="category_card">
+                <img class="product_image" src="${item.productImage}" alt="">
+                <h3 class="product_name">${item.productName}</h3>
+                <p class="product_desc">${item.productDesc}</p>
+                <p class="product_price">$${item.productPrice}</p>
+            </div>
+        `).join("")
+    } else if (category == 'Danh mục 3') {
+        const listRender = dataCategory.filter(item => item.categoryId == 3)
+        document.querySelector('.category_item-option.active') ? document.querySelector('.category_item-option.active')
+            .classList.remove('active') : console.log(1)
+        nodeEle.classList.add('active')
+        document.querySelector('.category_lists').innerHTML = listRender.map(item => `
+            <div class="category_card">
+                <img class="product_image" src="${item.productImage}" alt="">
+                <h3 class="product_name">${item.productName}</h3>
+                <p class="product_desc">${item.productDesc}</p>
+                <p class="product_price">$${item.productPrice}</p>
+            </div>
+        `).join("")
+    } else if (category == 'Danh mục 4') {
+        const listRender = dataCategory.filter(item => item.categoryId == 4)
+        document.querySelector('.category_item-option.active') ? document.querySelector('.category_item-option.active')
+            .classList.remove('active') : console.log(1)
+        nodeEle.classList.add('active')
+        document.querySelector('.category_lists').innerHTML = listRender.map(item => `
+            <div class="category_card">
+                <img class="product_image" src="${item.productImage}" alt="">
+                <h3 class="product_name">${item.productName}</h3>
+                <p class="product_desc">${item.productDesc}</p>
+                <p class="product_price">$${item.productPrice}</p>
+            </div>
+        `).join("")
+    }
+}
+
+
+const listCate = document.querySelectorAll('.category_item-option')
+
+for (const item of listCate) {
+    item.onclick = () => {
+        renderCate(item.innerText, item)
+    }
+}
+
+document.body.onload = () => {
+    renderCate('Danh mục 1', document.querySelector('.category_item-option'))
+
+}
+</script>
 
 <?php ipView('frontend.component.footer') ?>

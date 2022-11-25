@@ -13,7 +13,8 @@ class Home extends BaseController
 
     public function index()
     {
-        $lists = $this->homeModel->getProduct(4, 'ASC');
+        $sql = "SELECT * FROM products";
+        $lists = $this->homeModel->query_all($sql);
         return $this->view('frontend.index', [
             'lists' => $lists
         ]);
@@ -34,14 +35,16 @@ class Home extends BaseController
     {
         $sql = "select * from categories";
         $listsCategory = $this->homeModel->query_all($sql);
+        $qr = "SELECT * FROM products";
+        $listsPrd = $this->homeModel->query_all($qr);
 
-        if (!empty($_GET['dm']) && $_GET['dm'] > 0) {
-            $query = "select * from products where categoryId = {$_GET['dm']}";
-            $listsPrd = $this->homeModel->query_all($query);
-        } else {
-            $query = "select * from products where categoryId = 1";
-            $listsPrd = $this->homeModel->query_all($query);
-        }
+        // if (!empty($_GET['dm']) && $_GET['dm'] > 0) {
+        //     $query = "select * from products where categoryId = {$_GET['dm']}";
+        //     $listsPrd = $this->homeModel->query_all($query);
+        // } else {
+        //     $query = "select * from products where categoryId = 1";
+        //     $listsPrd = $this->homeModel->query_all($query);
+        // }
 
         return $this->view('frontend.pages.category', [
             'listsCategory' => $listsCategory,

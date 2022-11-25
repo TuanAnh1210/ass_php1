@@ -1,8 +1,9 @@
 <?php
-$css_file = 'http://localhost/php1_ass_ph29220/public/css/app.css';
+$css_file = 'http://localhost/php1_ass_ph29220/public/css/main.css';
 $css_responsive = 'http://localhost/php1_ass_ph29220/public/css/responsiveP.css';
 $grid_css = 'http://localhost/php1_ass_ph29220/public/css/bootstrap-grid.css';
 $gridmap_css = 'http://localhost/php1_ass_ph29220/public/css/bootstrap-grid.css.map';
+$dashboard_css = 'http://localhost/php1_ass_ph29220/public/css/dashboards.css';
 
 function css_file()
 {
@@ -19,4 +20,9 @@ function gridmap_css()
 function css_responsive()
 {
     return $GLOBALS['css_responsive'];
+}
+
+function dashboard_css()
+{
+    return $GLOBALS['dashboard_css'];
 }

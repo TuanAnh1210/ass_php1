@@ -1,35 +1,22 @@
 <?php ipView('frontend.component.header') ?>
 
-
-
 <div class="banner">
     <img src="http://localhost/php1_ass_ph29220/public/imgs/banner.png" alt="banner" />
 </div>
 
-
-
 <div class="product">
     <h2 class="product_title">Our Products</h2>
     <div class="container">
-        <div class="row">
-            <?php foreach ($lists as $index => $item) : ?>
-            <div class="col-12 col-md-6 col-lg-3">
-                <a href="home/detail?id=<?php echo $item['id'] ?>">
-                    <div class="product_card">
-                        <img class="product_image" src="<?php echo $item['productImage'] ?>" alt="product" />
-                        <h3 class="product_name"> <?php echo $item['productName'] ?> </h3>
-                        <p class="product_desc"><?php echo $item['productDesc'] ?></p>
-                        <p class="product_price">$<?php echo $item['productPrice'] ?></p>
-                    </div>
-                </a>
-            </div>
+        <div class="row prdRenderHome">
 
-            <?php endforeach ?>
 
         </div>
     </div>
 
-    <button class="product-viewMore">Show More</button>
+    <div class="">
+        <button class="product-viewMore">Show More</button>
+        <button class="product-viewMore">Hide Away</button>
+    </div>
 </div>
 
 <!-- tricks -->
@@ -65,8 +52,48 @@
     </div>
 </div>
 
-<?php ipView('frontend.component.footer') ?>
-
 <script>
+const data = <?= json_encode($lists) ?>
 
+data.forEach(element => {
+    for (let i in element) {
+        if (!isNaN(Number(i))) {
+            delete element[i];
+        }
+    }
+});
+
+let count = 0;
+
+function renderPrd(count) {
+    let target = count + 4
+
+    const dataRender = data.slice(0, target)
+    document.querySelector('.prdRenderHome').innerHTML = dataRender.map(ele => `
+            <div class="col-12 col-md-6 col-lg-3">
+                <a href="home/detail?id=${ele.id}">
+                    <div class="product_card">
+                        <img class="product_image" src="${ele.productImage}" alt="product" />
+                        <h3 class="product_name">${ele.productName}</h3>
+                        <p class="product_desc">${ele.productDesc}</p>
+                        <p class="product_price">$${ele.productPrice}</p>
+                    </div>
+                </a>
+            </div>
+    `).join("")
+}
+
+document.body.onload = () => {
+    renderPrd(count)
+}
+
+// handle view more
+const productViewMore = document.querySelector('.product-viewMore')
+productViewMore.onclick = () => {
+    count += 4;
+    console.log(count)
+    renderPrd(count)
+}
 </script>
+
+<?php ipView('frontend.component.footer') ?>

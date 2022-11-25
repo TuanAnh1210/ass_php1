@@ -467,6 +467,12 @@ form {
     color: #ea4335;
     transform: translateX(2px);
     transition: all linear .3s;
+    cursor: pointer;
+}
+
+.category_item-option.active {
+    color: #ea4335;
+
 }
 
 
@@ -500,4 +506,5 @@ form {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 32px;
+    min-height: 416px;
 }

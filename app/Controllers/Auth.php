@@ -1,7 +1,7 @@
-<?php 
-    class Auth extends BaseModel {
-        public function __construct()
-        {
-            
-        }
+<?php
+class Auth extends BaseController
+{
+    public function __construct()
+    {
     }
+}
