@@ -165,9 +165,13 @@ header {
     margin: 6px 0;
 }
 
-.product-viewMore {
+.prudct-btn-wrapper {
     display: flex;
-    margin: 32px auto;
+    justify-content: center;
+}
+
+.product-viewMore {
+    margin: 32px 6px 48px 6px;
     padding: 8px 22px;
     font-size: 1.8rem;
     font-weight: 700;
@@ -176,6 +180,10 @@ header {
     color: var(--primary-color);
     transition: all linear .3s;
 
+}
+
+.hide-away {
+    display: none;
 }
 
 .product-viewMore:hover {

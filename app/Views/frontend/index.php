@@ -13,9 +13,9 @@
         </div>
     </div>
 
-    <div class="">
+    <div class="prudct-btn-wrapper">
         <button class="product-viewMore">Show More</button>
-        <button class="product-viewMore">Hide Away</button>
+        <button class="product-viewMore hide-away">Hide Away</button>
     </div>
 </div>
 
@@ -89,10 +89,18 @@ document.body.onload = () => {
 
 // handle view more
 const productViewMore = document.querySelector('.product-viewMore')
+const hideAway = document.querySelector('.hide-away')
 productViewMore.onclick = () => {
     count += 4;
-    console.log(count)
+    hideAway.style.display = 'block'
     renderPrd(count)
+}
+
+hideAway.onclick = () => {
+    count = 0;
+    hideAway.style.display = 'none'
+    renderPrd(count)
+
 }
 </script>
 

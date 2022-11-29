@@ -2,6 +2,16 @@
 
 <div class="dashBoard_content">
     <?php ipView('admin.component.acc') ?>
+    <div class="message__delete">
+        <h2>Bạn chắc chắn muốn xóa !!</h2>
+        <h4>Nếu xóa dữ liệu sẽ không thể khôi phục</h4>
+        <div class="btn__delete-container">
+            <button class="yes">Yes</button>
+            <button class="no">No</button>
+
+        </div>
+    </div>
+
     <div class="dashBoard_banner">
         <h2>Welcome to Dashboard</h2>
     </div>
@@ -14,7 +24,8 @@
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <input type="text" placeholder="Search product">
                 </div>
-                <button class="btn_addPrd">Add New Product</button>
+                <a href="http://localhost/php1_ass_ph29220/admin/addNewPrd"><button class="btn_addPrd">Add New
+                        Product</button></a>
             </div>
         </div>
 
@@ -32,14 +43,10 @@
                 </tr>
             </thead>
             <tbody>
-
-
-
             </tbody>
         </table>
 
         <div class="pagination">
-
         </div>
     </div>
 
@@ -62,7 +69,7 @@ data.forEach(element => {
 });
 
 // handle quantity btn pagination
-let numberData = 3
+let numberData = 5
 
 const pagination = document.querySelector('.pagination')
 
@@ -92,8 +99,8 @@ function render(temp) {
                     <td>${ele.productPrice}</td>
                     <td>${ele.productDesc}</td>
                     <td style="text-align: center;">
-                        <button class="btn-update">Update</button>
-                        <button class="btn-delete">Delete</button>
+                        <a href="http://localhost/php1_ass_ph29220/admin/updatePrd?id=${ele.id}"><button class="btn-update">Update</button></a>
+                        <button onclick="confirmDelete(${ele.id})" class="btn-delete">Delete</button>
                     </td>
                 </tr>
 
@@ -111,6 +118,24 @@ for (let i = 0; i < btns.length; i++) {
 
         render(btns[i].innerText)
     }
+}
+
+// handle delete
+const btn_delete = document.querySelector('.btn-delete')
+const message__delete = document.querySelector('.message__delete')
+const yes_btn = document.querySelector('.yes')
+const no = document.querySelector('.no')
+const delete_links = document.querySelectorAll('.delete_links')
+
+function confirmDelete(id) {
+    message__delete.classList.add('open')
+    yes_btn.onclick = () => {
+        window.location = `http://localhost/php1_ass_ph29220/admin/productManage?delete&id=${id}`
+    }
+}
+
+no.onclick = () => {
+    message__delete.classList.remove('open')
 }
 </script>
 
