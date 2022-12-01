@@ -9,7 +9,6 @@
     <div class="container">
         <div class="row prdRenderHome">
 
-
         </div>
     </div>
 
@@ -73,7 +72,7 @@ function renderPrd(count) {
             <div class="col-12 col-md-6 col-lg-3">
                 <a href="home/detail?id=${ele.id}">
                     <div class="product_card">
-                        <img class="product_image" src="${ele.productImage}" alt="product" />
+                       <div class="product_image-wrapper"> <img class="product_image" src="${ele.productImage}" alt="product" /></div>
                         <h3 class="product_name">${ele.productName}</h3>
                         <p class="product_desc">${ele.productDesc}</p>
                         <p class="product_price">$${ele.productPrice}</p>
@@ -100,7 +99,6 @@ hideAway.onclick = () => {
     count = 0;
     hideAway.style.display = 'none'
     renderPrd(count)
-
 }
 </script>
 

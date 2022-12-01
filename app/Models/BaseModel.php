@@ -21,6 +21,8 @@ class BaseModel extends Database
         return $data = $this->query_one($sql);
     }
 
+
+
     public function create($table, $data = [])
     {
         $cols = implode(',', array_keys($data));

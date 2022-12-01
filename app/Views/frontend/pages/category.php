@@ -46,12 +46,14 @@ function renderCate(category, nodeEle) {
             .classList.remove('active') : console.log(1)
         nodeEle.classList.add('active')
         document.querySelector('.category_lists').innerHTML = listRender.map(item => `
-            <div class="category_card">
-                <img class="product_image" src="${item.productImage}" alt="">
-                <h3 class="product_name">${item.productName}</h3>
-                <p class="product_desc">${item.productDesc}</p>
-                <p class="product_price">$${item.productPrice}</p>
-            </div>
+        <a href="http://localhost/php1_ass_ph29220/home/detail?id=${item.id}">
+                <div class="category_card">
+                    <div class="product_image-wrapper"><img class="product_image" src="${item.productImage}" alt=""></div>
+                    <h3 class="product_name">${item.productName}</h3>
+                    <p class="product_desc">${item.productDesc}</p>
+                    <p class="product_price">$${item.productPrice}</p>
+                </div>
+        </a>
         `).join("")
     } else if (category == 'Danh mục 2') {
         const listRender = dataCategory.filter(item => item.categoryId == 2)
@@ -59,12 +61,14 @@ function renderCate(category, nodeEle) {
             .classList.remove('active') : console.log(1)
         nodeEle.classList.add('active')
         document.querySelector('.category_lists').innerHTML = listRender.map(item => `
-            <div class="category_card">
-                <img class="product_image" src="${item.productImage}" alt="">
-                <h3 class="product_name">${item.productName}</h3>
-                <p class="product_desc">${item.productDesc}</p>
-                <p class="product_price">$${item.productPrice}</p>
-            </div>
+          <a href="http://localhost/php1_ass_ph29220/home/detail?id=${item.id}">
+                <div class="category_card">
+                    <div class="product_image-wrapper"><img class="product_image" src="${item.productImage}" alt=""></div>
+                    <h3 class="product_name">${item.productName}</h3>
+                    <p class="product_desc">${item.productDesc}</p>
+                    <p class="product_price">$${item.productPrice}</p>
+                </div>
+          </a>
         `).join("")
     } else if (category == 'Danh mục 3') {
         const listRender = dataCategory.filter(item => item.categoryId == 3)
@@ -72,12 +76,14 @@ function renderCate(category, nodeEle) {
             .classList.remove('active') : console.log(1)
         nodeEle.classList.add('active')
         document.querySelector('.category_lists').innerHTML = listRender.map(item => `
-            <div class="category_card">
-                <img class="product_image" src="${item.productImage}" alt="">
-                <h3 class="product_name">${item.productName}</h3>
-                <p class="product_desc">${item.productDesc}</p>
-                <p class="product_price">$${item.productPrice}</p>
-            </div>
+          <a href="http://localhost/php1_ass_ph29220/home/detail?id=${item.id}">
+                <div class="category_card">
+                    <div class="product_image-wrapper"><img class="product_image" src="${item.productImage}" alt=""></div>
+                    <h3 class="product_name">${item.productName}</h3>
+                    <p class="product_desc">${item.productDesc}</p>
+                    <p class="product_price">$${item.productPrice}</p>
+                </div>
+          </a>
         `).join("")
     } else if (category == 'Danh mục 4') {
         const listRender = dataCategory.filter(item => item.categoryId == 4)
@@ -85,12 +91,14 @@ function renderCate(category, nodeEle) {
             .classList.remove('active') : console.log(1)
         nodeEle.classList.add('active')
         document.querySelector('.category_lists').innerHTML = listRender.map(item => `
-            <div class="category_card">
-                <img class="product_image" src="${item.productImage}" alt="">
-                <h3 class="product_name">${item.productName}</h3>
-                <p class="product_desc">${item.productDesc}</p>
-                <p class="product_price">$${item.productPrice}</p>
-            </div>
+          <a href="http://localhost/php1_ass_ph29220/home/detail?id=${item.id}">
+                <div class="category_card">
+                    <div class="product_image-wrapper"><img class="product_image" src="${item.productImage}" alt=""></div>
+                    <h3 class="product_name">${item.productName}</h3>
+                    <p class="product_desc">${item.productDesc}</p>
+                    <p class="product_price">$${item.productPrice}</p>
+                </div>
+          </a>
         `).join("")
     }
 }

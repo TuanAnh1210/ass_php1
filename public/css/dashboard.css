@@ -82,9 +82,17 @@ main {
     list-style: none;
 }
 
+.dashBoard_item.active {
+    color: red;
+}
+
 .dashBoard_item:hover.dashBoard_item a {
     color: red;
     transition: .2s all linear;
+}
+
+.dashBoard_item.active.dashBoard_item a {
+    color: red;
 }
 
 .dashBoard_item i {
@@ -345,6 +353,7 @@ td {
 
 /* message delete */
 .message__delete {
+    z-index: 10;
     display: none;
     width: 400px;
     height: 120px;
@@ -426,4 +435,24 @@ td {
     to {
         opacity: 1;
     }
+}
+
+/* update cate */
+.iptUpdateCate {
+    font-size: 1.8rem;
+    padding: 8px;
+    margin: auto;
+    display: none;
+}
+
+.iptUpdateCate.open {
+    display: block;
+}
+
+.cateNameP {
+    display: block;
+}
+
+.cateNameP.close {
+    display: none;
 }

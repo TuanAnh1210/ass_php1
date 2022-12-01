@@ -26,11 +26,11 @@
                 </li>
                 <li class="dashBoard_item">
                     <i class="fa-solid fa-chart-column"></i>
-                    <a class="" href="#">Quản lý user</a>
+                    <a class="" href="http://localhost/php1_ass_ph29220/admin/userManage">Quản lý user</a>
                 </li>
                 <li class="dashBoard_item">
                     <i class="fa-solid fa-table-cells"></i>
-                    <a class="" href="#">Quản lý danh mục</a>
+                    <a class="" href="http://localhost/php1_ass_ph29220/admin/cateManage">Quản lý danh mục</a>
                 </li>
                 <li class="dashBoard_item">
                     <i class="fa-solid fa-chart-column"></i>

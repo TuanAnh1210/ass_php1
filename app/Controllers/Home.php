@@ -4,17 +4,20 @@ class Home extends BaseController
 {
 
     private $homeModel;
+    private $cateModel;
 
     public function __construct()
     {
         $this->loadModel('HomeModel');
         $this->homeModel = new HomeModel;
+
+        $this->loadModel('CategoryModel');
+        $this->cateModel = new CategoryModel;
     }
 
     public function index()
     {
-        $sql = "SELECT * FROM products";
-        $lists = $this->homeModel->query_all($sql);
+        $lists = $this->homeModel->getAll();
         return $this->view('frontend.index', [
             'lists' => $lists
         ]);
@@ -33,18 +36,9 @@ class Home extends BaseController
 
     public function category()
     {
-        $sql = "select * from categories";
-        $listsCategory = $this->homeModel->query_all($sql);
-        $qr = "SELECT * FROM products";
-        $listsPrd = $this->homeModel->query_all($qr);
+        $listsCategory = $this->cateModel->getAllCate();
+        $listsPrd = $this->homeModel->getAll();
 
-        // if (!empty($_GET['dm']) && $_GET['dm'] > 0) {
-        //     $query = "select * from products where categoryId = {$_GET['dm']}";
-        //     $listsPrd = $this->homeModel->query_all($query);
-        // } else {
-        //     $query = "select * from products where categoryId = 1";
-        //     $listsPrd = $this->homeModel->query_all($query);
-        // }
 
         return $this->view('frontend.pages.category', [
             'listsCategory' => $listsCategory,

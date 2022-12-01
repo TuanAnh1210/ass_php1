@@ -13,4 +13,9 @@ class HomeModel extends BaseModel
     {
         return $this->one(self::TABLE, $id);
     }
+
+    public function getAll()
+    {
+        return $this->all(self::TABLE);
+    }
 }

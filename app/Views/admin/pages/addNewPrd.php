@@ -25,7 +25,10 @@
 
         </div>
         <div class="form_group">
-            <label for="productImage">Ảnh sản phẩm</label>
+            <label id="labelImage" for="productImage">
+                <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                <p>Upload ảnh</p>
+            </label>
             <input class="prdImage" type="file" name="productImage" id="productImage">
             <p class="error"></p>
 

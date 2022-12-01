@@ -4,7 +4,7 @@
     <div class="form_img">
         <img src="http://localhost/php1_ass_ph29220/public/imgs/form.png" alt="">
     </div>
-    <form class="form_acc" action="">
+    <form class="form_acc" action="" method="POST">
         <h2 class="form_title">Đăng nhập</h2>
         <div class="form_group-right">
             <label for="">Email</label>

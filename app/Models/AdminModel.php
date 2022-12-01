@@ -1,12 +1,18 @@
 <?php
 class AdminModel extends BaseModel
 {
-    const TABLE = 'admin';
+    const TABLE = 'products';
 
-    public function addPrd($prdName, $prdDesc, $prdImage, $prdPrice, $cateId)
+
+
+    public function addPrd($newListPrd)
     {
-        $sql = "INSERT INTO products (productName, productDesc, productImage, productPrice, categoryId) VALUES ('$prdName', '$prdDesc', '$prdImage', '$prdPrice', $cateId)";
 
-        return $this->execute($sql);
+        return $this->create(self::TABLE, $newListPrd);
+    }
+
+    public function getAllPrd()
+    {
+        return $this->all(self::TABLE);
     }
 }
