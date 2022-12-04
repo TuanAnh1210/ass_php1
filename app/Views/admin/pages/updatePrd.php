@@ -65,7 +65,7 @@
             <p class="error"></p>
 
         </div>
-        <button class="btn-add-newPrd">Add New Product</button>
+        <button class="btn-add-newPrd">Update Product</button>
     </form>
 
 </div>

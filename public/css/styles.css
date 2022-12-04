@@ -16,10 +16,125 @@ html {
     font-size: 62.5%;
 }
 
-body {}
+body {
+    overflow-y: overlay;
+}
+
+
+html *::-webkit-scrollbar {
+    border-radius: 0;
+    width: 8px;
+}
+
+
+html *::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .15);
+}
+
+
+
+html *::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
 
 main {
     position: relative;
+}
+
+
+/* message delete */
+.message__succ,
+.message__delete {
+    z-index: 10;
+    display: none;
+    width: 400px;
+    height: 120px;
+    position: fixed;
+    right: 26px;
+    top: 20%;
+    background-color: #111;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    padding: 8px;
+    border-left: 6px solid orangered;
+    color: #fff;
+    animation: runIn linear .2s;
+}
+
+.message__succ.open,
+.message__delete.open {
+    display: block;
+}
+
+.message__succ h2,
+.message__delete h2 {
+    margin-left: 10px;
+    font-weight: 500;
+    font-size: 1.8rem;
+}
+
+.message__succ h4,
+.message__delete h4 {
+    font-size: 1.4rem;
+
+    margin-left: 28px;
+    font-weight: 500;
+    font-style: italic;
+    line-height: 32px;
+}
+
+.btn__delete-container {
+    margin-left: 18px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: end;
+}
+
+.yes_succ,
+.no,
+.yes {
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #fff;
+    color: #111;
+    padding: 4px 20px;
+
+}
+
+.yes_succ:hover,
+.no:hover,
+.yes:hover {
+    color: orangered;
+    cursor: pointer;
+}
+
+.no {
+    margin: 0 12px;
+}
+
+@keyframes runIn {
+    from {
+        transform: translateX(110%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes ani {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 /* header */
@@ -115,6 +230,61 @@ header {
     padding: 4px;
     display: none;
     cursor: pointer;
+}
+
+.header_users {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.header_users::after {
+    position: absolute;
+    content: "";
+    width: 300%;
+    height: 52px;
+    bottom: 0;
+    left: 0;
+}
+
+.header_users:hover .sub_user {
+    display: block;
+}
+
+.header_users h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0066B2;
+}
+
+.header_users img {
+    width: 32px;
+}
+
+.sub_user {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 320%;
+    background-color: #fff;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    border-radius: 4px;
+}
+
+.sub_user a {
+    display: block;
+    font-size: 1.6rem;
+    padding: 8px 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.sub_user a:hover {
+    background-color: orangered;
+    cursor: pointer;
+    transition: all linear .2s;
 }
 
 /* banner */
@@ -324,18 +494,45 @@ form {
 }
 
 .form_title.signUp {
-
     color: #F26F21;
+}
+
+.confirmAdmin {
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: space-between !important;
+}
+
+.confirmAdmin label {
+    margin-bottom: 0 !important;
+    font-weight: 700 !important;
+
+}
+
+.confirmAdmin div {
+    display: flex;
+    align-items: center;
+}
+
+.confirmAdmin input {
+    margin-left: 12px;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
 }
 
 .form_acc {}
 
-
+.error {
+    color: red;
+    font-size: 1.4rem;
+    height: 20px;
+}
 
 .form_group-right {
     display: flex;
     flex-direction: column;
-    margin-bottom: 18px;
+    margin-bottom: 14px;
 }
 
 .form_group-right label {
@@ -350,6 +547,7 @@ form {
     font-size: 1.6rem;
     padding: 10px 20px;
     border-radius: 6px;
+    outline: none;
 }
 
 .form_group-right.signUp input {

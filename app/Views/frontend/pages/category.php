@@ -40,7 +40,7 @@ dataCategory.forEach(element => {
 });
 
 function renderCate(category, nodeEle) {
-    if (category == 'Danh mục 1') {
+    if (category == 'Danh muc 1') {
         const listRender = dataCategory.filter(item => item.categoryId == 1)
         document.querySelector('.category_item-option.active') ? document.querySelector('.category_item-option.active')
             .classList.remove('active') : console.log(1)
@@ -55,7 +55,7 @@ function renderCate(category, nodeEle) {
                 </div>
         </a>
         `).join("")
-    } else if (category == 'Danh mục 2') {
+    } else if (category == 'Danh muc 2') {
         const listRender = dataCategory.filter(item => item.categoryId == 2)
         document.querySelector('.category_item-option.active') ? document.querySelector('.category_item-option.active')
             .classList.remove('active') : console.log(1)
@@ -70,7 +70,7 @@ function renderCate(category, nodeEle) {
                 </div>
           </a>
         `).join("")
-    } else if (category == 'Danh mục 3') {
+    } else if (category == 'Danh muc 3') {
         const listRender = dataCategory.filter(item => item.categoryId == 3)
         document.querySelector('.category_item-option.active') ? document.querySelector('.category_item-option.active')
             .classList.remove('active') : console.log(1)
@@ -85,7 +85,7 @@ function renderCate(category, nodeEle) {
                 </div>
           </a>
         `).join("")
-    } else if (category == 'Danh mục 4') {
+    } else if (category == 'Danh muc 4') {
         const listRender = dataCategory.filter(item => item.categoryId == 4)
         document.querySelector('.category_item-option.active') ? document.querySelector('.category_item-option.active')
             .classList.remove('active') : console.log(1)
@@ -113,8 +113,7 @@ for (const item of listCate) {
 }
 
 document.body.onload = () => {
-    renderCate('Danh mục 1', document.querySelector('.category_item-option'))
-
+    renderCate('Danh muc 1', document.querySelector('.category_item-option'))
 }
 </script>
 

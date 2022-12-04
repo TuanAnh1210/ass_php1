@@ -43,12 +43,38 @@
                     <li class="nav_item"><a class="nav_link" href="#">Liên Hệ</a></li>
                 </ul>
 
+                <?php if (!empty($_SESSION)) : ?>
+                <div class="header_users">
+                    <h3>
+                        <?php echo $_SESSION['auth']['fullname'] ?>
+                    </h3>
+                    <img src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png" alt="">
+                    <div class="sub_user">
+                        <a>
+                            <i class="fa-solid fa-user"></i>
+                            <span>Thông tin</span>
+                        </a>
+                        <a href="http://localhost/php1_ass_ph29220/account/gotopage">
+                            <i class="fa-solid fa-gear"></i>
+                            <span>Tới trang quản trị</span>
+                        </a>
+                        <a href="http://localhost/php1_ass_ph29220/account/logout">
+                            <i class="fa-solid fa-right-to-bracket"></i>
+                            <span>Logout</span>
+                        </a>
+                    </div>
+                </div>
+                <?php endif ?>
+
+                <?php if (empty($_SESSION)) : ?>
                 <div class="header_actions">
                     <a href="http://localhost/php1_ass_ph29220/account?signIn"><input class="btn-logIn" type="button"
                             value="Đăng Nhập" /></a>
                     <a href="http://localhost/php1_ass_ph29220/account?signUp"> <input class="btn-register"
                             type="button" value="Đăng Ký" /></a>
                 </div>
+                <?php endif ?>
+
 
                 <div class="header__menu-icon">
                     <i class="fa-solid fa-bars"></i>

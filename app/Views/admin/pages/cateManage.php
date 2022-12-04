@@ -13,7 +13,7 @@
     </div>
 
     <div class="dashBoard_banner">
-        <h2>Welcome to Dashboard</h2>
+        <h2>Quản lý danh mục</h2>
     </div>
 
     <div class="prdManage_header">

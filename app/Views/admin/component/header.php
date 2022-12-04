@@ -13,7 +13,7 @@
 <body>
     <div class="dashBoard_wrapper">
         <div class="sideBar">
-            <a href="http://localhost/php1_ass_ph29220/admin/"><img
+            <a href="http://localhost/php1_ass_ph29220/"><img
                     src="http://localhost/php1_ass_ph29220/public/imgs/logo.png" alt="logo"></a>
             <ul class="dashBoard_list">
                 <li class="dashBoard_item">

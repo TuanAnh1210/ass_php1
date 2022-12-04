@@ -3,6 +3,7 @@ class Admin extends BaseController
 {
     private $adminModel;
     private $cateModel;
+    private $accModel;
 
     public function __construct()
     {
@@ -11,10 +12,28 @@ class Admin extends BaseController
 
         $this->loadModel('CategoryModel');
         $this->cateModel = new CategoryModel;
+
+
+        $this->loadModel('AccountModel');
+        $this->accModel = new AccountModel;
     }
     public function index()
     {
-        return $this->view('admin.index');
+        if (!empty($_SESSION)) {
+            if ($_SESSION['auth']['role'] == 1 && $_SESSION['auth']['censorship'] == 1) {
+                return $this->view('admin.index');
+            } else if ($_SESSION['auth']['role'] == 1 && $_SESSION['auth']['censorship'] == 0) {
+                echo '<h1>Tài khoản của bạn đang chờ duyệt </h1>';
+                unset($_SESSION['auth']);
+
+                die;
+            } else if ($_SESSION['auth']['role'] == 0) {
+                echo '<h1>Tài khoản của bạn không có quyền quản trị </h1>';
+                die;
+            }
+        } else {
+            header('location: http://localhost/php1_ass_ph29220/account?signIn');
+        }
     }
     public function productManage()
     {
@@ -112,7 +131,17 @@ class Admin extends BaseController
 
     public function userManage()
     {
-        return $this->view('admin.pages.userManage');
+        if (isset($_GET['check']) && !empty($_GET['id'])) {
+            $arrId = $_GET['id'];
+            $lisrUserUpdate = explode(',', $arrId);
+            $this->accModel->updateCensorship($lisrUserUpdate);
+            header('location: http://localhost/php1_ass_ph29220/admin/userManage');
+        }
+
+        $listAcc = $this->accModel->getAllUer();
+        return $this->view('admin.pages.userManage', [
+            'listAcc' => $listAcc
+        ]);
     }
 
     public function cateManage()
@@ -124,7 +153,6 @@ class Admin extends BaseController
             $newArrCate = [
                 'categoryName' => $newCate
             ];
-
             $this->cateModel->updateCate($newArrCate,  $idCate);
             header('location: http://localhost/php1_ass_ph29220/admin/cateManage');
         }

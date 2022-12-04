@@ -13,7 +13,7 @@
     </div>
 
     <div class="dashBoard_banner">
-        <h2>Welcome to Dashboard</h2>
+        <h2>Quản lý sản phẩm</h2>
     </div>
 
     <div class="prdManage_header">
@@ -22,7 +22,7 @@
             <div class="prdManage_form">
                 <div class="prdManage_form-search">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" placeholder="Search product">
+                    <input id="search_ipt" type="text" placeholder="Search product">
                 </div>
                 <a href="http://localhost/php1_ass_ph29220/admin/addNewPrd"><button class="btn_addPrd">Add New
                         Product</button></a>
@@ -119,6 +119,57 @@ for (let i = 0; i < btns.length; i++) {
         render(btns[i].innerText)
     }
 }
+
+
+// handle search 
+const search_ipt = document.querySelector('#search_ipt')
+
+search_ipt.onkeyup = () => {
+    const valueIpt = search_ipt.value.toLowerCase()
+    const arr = []
+    data.forEach(item => {
+        const text = item.productName.toLowerCase()
+
+        if (text.indexOf(valueIpt) > -1) {
+            arr.push(item)
+        }
+    })
+
+
+
+    renderSearch(arr)
+
+}
+
+function renderSearch(dataSearch) {
+
+    const sameArray = JSON.stringify(dataSearch) === JSON.stringify(data);
+    console.log(sameArray)
+    if (sameArray) {
+        render(temp)
+    } else {
+        document.querySelector('tbody').innerHTML = dataSearch.map((ele, index) => `
+             <tr>
+                    <td>${ele.id}</td>
+                    <td class="productNameItem">${ele.productName}</td>
+                    <td>
+                        <img class="prdMana_image" src="${ele.productImage}"
+                            alt="">
+                    </td>
+                    <td>${ele.productPrice}</td>
+                    <td>${ele.productDesc}</td>
+                    <td style="text-align: center;">
+                        <a href="http://localhost/php1_ass_ph29220/admin/updatePrd?id=${ele.id}"><button class="btn-update">Update</button></a>
+                        <button onclick="confirmDelete(${ele.id})" class="btn-delete">Delete</button>
+                    </td>
+                </tr>
+
+    `).join('')
+    }
+
+
+}
+
 
 // handle delete
 const btn_delete = document.querySelector('.btn-delete')
