@@ -100,7 +100,38 @@
 </footer>
 </main>
 <script src="http://localhost/php1_ass_ph29220/public/js/index.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+<script src="http://localhost/php1_ass_ph29220/public/lib/owl/owl.carousel.min.js"></script>
+<script>
+$(document).ready(function() {
+    $(".owl-carousel").owlCarousel();
+});
+
+$(".owl-carousel").owlCarousel({
+    loop: true,
+    margin: 10,
+    autoplay: true,
+    autoplayTimeout: 3000,
+    nav: true,
+    responsive: {
+        0: {
+            items: 1,
+        },
+        600: {
+            items: 1,
+        },
+        1000: {
+            items: 1,
+        },
+    },
+});
+</script>
+
+<script src="http://localhost/php1_ass_ph29220/public/lib/aos/aos.js"></script>
+<script>
+AOS.init();
+</script>
 </body>
 
 </html>

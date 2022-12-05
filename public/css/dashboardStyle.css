@@ -43,6 +43,7 @@ html *::-webkit-scrollbar-track {
 
 main {
     position: relative;
+    overflow: hidden;
 }
 
 .dashBoard_wrapper {

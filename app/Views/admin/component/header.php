@@ -8,6 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="<?= dashboard_css() ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="stylesheet" href="http://localhost/php1_ass_ph29220/public/lib/aos/aos.css" />
 </head>
 
 <body>

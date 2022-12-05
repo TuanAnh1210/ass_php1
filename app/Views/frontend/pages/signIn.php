@@ -1,6 +1,6 @@
 <?php ipView('frontend.component.header'); ?>
 
-<div class="form_wrapper">
+<div data-aos-duration="2000" data-aos="zoom-out" class="form_wrapper">
     <div class="form_img">
         <img src="http://localhost/php1_ass_ph29220/public/imgs/form.png" alt="">
     </div>
@@ -116,3 +116,9 @@ function checkExist() {
 </script>
 
 <script src="http://localhost/php1_ass_ph29220/public/js/index.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script src="http://localhost/php1_ass_ph29220/public/lib/aos/aos.js"></script>
+<script>
+AOS.init();
+</script>

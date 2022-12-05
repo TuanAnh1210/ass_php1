@@ -1,10 +1,15 @@
 <?php ipView('frontend.component.header') ?>
 
-<div class="banner">
+<div data-aos-duration="2000" data-aos="zoom-out" class="banner owl-carousel owl-theme">
     <img src="http://localhost/php1_ass_ph29220/public/imgs/banner.png" alt="banner" />
+    <img style="height: 592px;"
+        src="https://homehome.vn/wp-content/uploads/6-mau-hinh-anh-noi-that-nha-dep-theo-phong-cach-hien-dai.jpg"
+        alt="banner" />
+    <img style="height: 592px;"
+        src="https://lavenderstudio.com.vn/wp-content/uploads/2017/11/chup-hinh-nha-cua-dep-8.jpg" alt="banner" />
 </div>
 
-<div class="product">
+<div data-aos="fade-up" data-aos-duration="3000" class="product ">
     <h2 class="product_title">Our Products</h2>
     <div class="container">
         <div class="row prdRenderHome">
@@ -19,7 +24,7 @@
 </div>
 
 <!-- tricks -->
-<div class="tricks">
+<div data-aos="fade-up" data-aos-duration="3000" class="tricks">
     <h2 class="tricks_title">Tips & Tricks</h2>
     <div class="container">
         <div class="row">
@@ -69,7 +74,9 @@ function renderPrd(count) {
 
     const dataRender = data.slice(0, target)
     document.querySelector('.prdRenderHome').innerHTML = dataRender.map(ele => `
-            <div class="col-12 col-md-6 col-lg-3">
+            <div data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000" class="col-12 col-md-6 col-lg-3">
                 <a href="home/detail?id=${ele.id}">
                     <div class="product_card">
                        <div class="product_image-wrapper"> <img class="product_image" src="${ele.productImage}" alt="product" /></div>

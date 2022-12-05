@@ -1,9 +1,9 @@
 <?php
-$css_file = 'http://localhost/php1_ass_ph29220/public/css/styles.css';
+$css_file = 'http://localhost/php1_ass_ph29220/public/css/style.css';
 $css_responsive = 'http://localhost/php1_ass_ph29220/public/css/responsiveP.css';
 $grid_css = 'http://localhost/php1_ass_ph29220/public/css/bootstrap-grid.css';
 $gridmap_css = 'http://localhost/php1_ass_ph29220/public/css/bootstrap-grid.css.map';
-$dashboard_css = 'http://localhost/php1_ass_ph29220/public/css/dashboard.css';
+$dashboard_css = 'http://localhost/php1_ass_ph29220/public/css/dashboardStyle.css';
 
 function css_file()
 {

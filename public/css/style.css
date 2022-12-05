@@ -42,6 +42,7 @@ html *::-webkit-scrollbar-track {
 
 main {
     position: relative;
+    overflow: hidden;
 }
 
 
@@ -289,6 +290,7 @@ header {
 
 /* banner */
 .banner {
+    position: relative;
     padding-top: var(--height-header);
     margin-bottom: 64px;
 }
@@ -721,4 +723,44 @@ form {
     grid-template-columns: repeat(3, 1fr);
     gap: 32px;
     min-height: 864px;
+}
+
+.owl-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.owl-next,
+.owl-prev {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 50% !important;
+    background-color: rgba(104, 104, 104, 0.7) !important;
+}
+
+.owl-next span,
+.owl-prev span {
+    font-size: 54px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.owl-next {}
+
+.owl-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.owl-dots button span {
+    padding: 10px;
 }
