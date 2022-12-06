@@ -1,16 +1,16 @@
 <?php ipView('frontend.component.header'); ?>
 
 <div class="message__delete">
-    <h2>Đăng ký quản trị viên thành công!</h2>
-    <h4>Vui lòng đợi kiểm duyệt (khoảng 1-2 ngày)</h4>
+    <h2>Vui lòng xác minh email</h2>
+    <h4>Và đợi kiểm duyệt (khoảng 1-2 ngày)</h4>
     <div class="btn__delete-container">
         <button class="yes">Yes</button>
 
     </div>
 </div>
 <div class="message__succ">
-    <h2>Đăng ký thành công!</h2>
-    <h4>Quay về trang đăng nhập</h4>
+    <h2>Sắp xong rồi còn bước cuối thôi !!</h2>
+    <h4>Nhấn yes để sang trang xác minh nhé</h4>
     <div class="btn__delete-container">
         <button class="yes_succ">Yes</button>
 

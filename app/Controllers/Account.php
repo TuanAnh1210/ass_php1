@@ -47,8 +47,9 @@ class Account extends BaseController
                         'censorship' => 1,
                     ];
 
-                    $this->accountModel->addNew($arrUser);
-                    header('location: http://localhost/php1_ass_ph29220/account?signIn');
+                    mailAuth('sendmail', [
+                        'arrUser' => $arrUser
+                    ]);
                 } else if ($role == 'admin') {
                     $arrUser = [
                         'fullname' => $fullname,
@@ -57,8 +58,9 @@ class Account extends BaseController
                         'role' => 1,
                         'censorship' => 0,
                     ];
-                    $this->accountModel->addNew($arrUser);
-                    header('location: http://localhost/php1_ass_ph29220/');
+                    mailAuth('sendmail', [
+                        'arrUser' => $arrUser
+                    ]);
                 }
             }
 
@@ -88,6 +90,27 @@ class Account extends BaseController
         } else if ($_SESSION['auth']['role'] == 0) {
             echo '<h1>Tài khoản của bạn không có quyền quản trị </h1>';
             die;
+        }
+    }
+
+    public function authSuccess()
+    {
+        if (!empty($_POST)) {
+            $fullname = $_POST['fullnameUser'];
+            $email = $_POST['emailUser'];
+            $password = $_POST['passwordUser'];
+            $role = $_POST['roleUser'];
+            $censorship = $_POST['censorshipUser'];
+
+            $arrUser = [
+                'fullname' => $fullname,
+                'email' => $email,
+                'password' => $password,
+                'role' => $role,
+                'censorship' => $censorship,
+            ];
+            $this->accountModel->addNew($arrUser);
+            header('location: http://localhost/php1_ass_ph29220/account?signIn');
         }
     }
 }

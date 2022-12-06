@@ -764,3 +764,43 @@ form {
 .owl-dots button span {
     padding: 10px;
 }
+
+.authForm_wrapper {}
+
+.authTitle {
+    font-size: 2.8rem;
+    color: #F26F21;
+    font-weight: 700;
+}
+
+.authSub {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 24px;
+}
+
+.authCode {
+    border: 1px solid #ea4335;
+    width: 100%;
+    padding: 6px 20px;
+    font-size: 2.2rem;
+    border-radius: 8px;
+    outline: none;
+}
+
+.authBtn {
+    font-size: 1.6rem;
+    background-color: #0066B2;
+    color: #fff;
+    padding: 4px 16px;
+    border-radius: 6px;
+    display: flex;
+    margin: 12px auto 0 auto;
+    transition: all linear .2s;
+
+}
+
+.authBtn:hover {
+    background-color: #F26F21;
+    transition: all linear .2s;
+}
