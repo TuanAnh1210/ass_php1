@@ -31,6 +31,8 @@
                 <i class="fa-solid fa-arrow-up-from-bracket"></i>
                 <p>Upload ảnh</p>
             </label>
+            <span style="font-size: 16px;" id="previewText"></span>
+
             <input class="prdImage" type="file" name="productImage" id="productImage"
                 value="<?= $data['productImage'] ?>">
             <img style="height: 200px; object-fit: contain;" src="<?= $data['productImage'] ?>" alt="">
@@ -71,6 +73,11 @@
 </div>
 
 <script>
+const prdImage = document.querySelector('.prdImage')
+prdImage.onchange = () => {
+    document.getElementById('previewText').innerText = prdImage.value
+}
+
 const addNewPrd_form = document.querySelector('.addNewPrd_form')
 
 addNewPrd_form.onsubmit = (e) => {
